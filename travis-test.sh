@@ -1,33 +1,17 @@
 #!/bin/sh
 
-echo 'Running Gulp Clean'
-gulp clean
+echo 'Creating appsettings folder'
+mkdir -p wwwroot/lib/iUS.AppSettings/
 
-echo 'Creating javascript folder'
-mkdir -p wwwroot/lib/jquery/dist/
+echo "Writing appsettings file"
+echo "{ 'isPassed': true}" > wwwroot/lib/iUS.AppSettings/testsettings.json
 
-echo "Writing javascript file"
-echo "function hellowWorld() { alert('Hello World'); }" > wwwroot/lib/jquery/dist/jquery.js
-echo "function hellowWorld() { alert('Hello World'); }" > wwwroot/lib/jquery/dist/jquery.min.js
+echo "Running gulp appsettings"
+gulp appsettings
 
-echo 'Creating css folder'
-mkdir -p wwwroot/lib/pure/
 
-echo "Writing css file"
-echo "body { color : 'red'; } " > wwwroot/lib/pure/pure.css
-echo "body { color : 'red'; } " > wwwroot/lib/pure/pure.min.css
-
-echo "Running Gulp Concat"
-gulp concat
-
-echo "asserting javascript files were created"
-if [ ! -f 'wwwroot/js/site.js' ]; then 
-	echo "Site.js not created" 
-	exit 1 
-fi
-
-echo "asserting css files were created"
-if [ ! -f 'wwwroot/css/site.css' ]; then 
-	echo "Site.css not created" 
+echo "asserting configuration files were created"
+if [ ! -f 'Configuration/testsettings.json' ]; then 
+	echo "Configuration/testsettings.json was not created" 
 	exit 1 
 fi
