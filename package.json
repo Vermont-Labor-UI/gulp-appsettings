@@ -1,0 +1,13 @@
+{
+  "name": "gulp-appsettings",
+  "description": "Gulp file to assist in copying the appsettings for .NET Core projects",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ius-gov/gulp-appsettings.git"
+  },
+  "license": "Apache-2.0",
+  "version": "1.0.0",
+  "dependencies": {
+    "gulp": "^3.9.1",
+  }
+}
