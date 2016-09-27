@@ -11,7 +11,7 @@ gulp appsettings
 
 
 echo "asserting configuration files were created"
-if [ ! -f 'Configuration/testsettings.json' ]; then 
-	echo "Configuration/testsettings.json was not created" 
-	exit 1 
+if [ ! -f 'testsettings.json' ]; then
+	echo "testsettings.json was not created"
+	exit 1
 fi
